@@ -3,28 +3,22 @@ class Pet:
         self.name = name
         self.species = species
         self.owner = owner  
-
     def __str__(self):
         return f"{self.name} ({self.species}) - Owner: {self.owner.username if self.owner else 'No owner'}"
-
-
 class User:
     def __init__(self, username, password):
         self.username = username
         self.password = password
         self.pets = []  
-
     def add_pet(self, pet):
         self.pets.append(pet)
         pet.owner = self  
-
     def remove_pet(self, pet):
         if pet in self.pets:
             self.pets.remove(pet)
             pet.owner = None  
         else:
             print(f"{self.username} không sở hữu thú cưng này.")
-
     def list_pets(self):
         if not self.pets:
             print(f"{self.username} không có thú cưng nào.")
@@ -32,8 +26,6 @@ class User:
             print(f"{self.username}'s Pets:")
             for pet in self.pets:
                 print(f"  - {pet}")
-
-
 class Manager:
     def __init__(self):
         self.users = []  
@@ -41,7 +33,6 @@ class Manager:
         self.logged_in_user = None  
         self.admin_username = "admin"  
         self.admin_password = "123"   
-
     def register_user(self):
         username = input("Nhập tên người dùng: ")
         password = input("Nhập mật khẩu: ")
@@ -52,7 +43,6 @@ class Manager:
         self.users.append(user)
         print(f"Đăng ký người dùng {username} thành công.")
         return user
-
     def login_user(self):
         username = input("Nhập tên người dùng: ")
         password = input("Nhập mật khẩu: ")
@@ -64,7 +54,6 @@ class Manager:
         else:
             print("Tên người dùng hoặc mật khẩu không đúng.")
             return None
-
     def login_admin(self):
         username = input("Nhập tài khoản quản trị viên: ")
         password = input("Nhập mật khẩu quản trị viên: ")
