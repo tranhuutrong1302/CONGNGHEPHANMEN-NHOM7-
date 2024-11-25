@@ -137,7 +137,7 @@ if manager.logged_in_user:
         if action == '1':
             manager.add_new_pet()  # Thêm thú cưng mới
         elif action == '2':
-            manager.logged_in_user.list_pets()  # Hiển thị thú cưng của người dùng
+            manager.logged_in_user.list_pets() 
         elif action == '3':
             pet_name = input("Nhập tên thú cưng bạn muốn cho đi: ")
             manager.give_away_pet(manager.logged_in_user.username, pet_name)  # Cho đi thú cưng
